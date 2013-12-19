@@ -1,10 +1,19 @@
+import org.mt4j.MTApplication;
 
-public class Main {
+
+public class Main extends MTApplication {
 
 	/**
-	 * @param args
+	 * 
 	 */
-	public static void main(String[] args) {
+	private static final long serialVersionUID = 1L;
+
+	public Main() {
+		initialize();
+	}
+
+	@Override
+	public void startUp() {
 		// TODO Auto-generated method stub
 
 	}
