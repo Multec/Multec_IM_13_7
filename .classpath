@@ -2,7 +2,6 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/MT4j"/>
 	<classpathentry kind="lib" path="/MT4j/mt4jLibs/batik/batik-anim.jar"/>
 	<classpathentry kind="lib" path="/MT4j/mt4jLibs/batik/batik-awt-util.jar"/>
 	<classpathentry kind="lib" path="/MT4j/mt4jLibs/batik/batik-bridge.jar"/>
@@ -52,5 +51,6 @@
 	<classpathentry kind="lib" path="/MT4j/mt4jLibs/mri.jar"/>
 	<classpathentry kind="lib" path="/MT4j/mt4jLibs/mt4j.jar"/>
 	<classpathentry kind="lib" path="/MT4j/mt4jLibs/muito_blobtracking.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/MT4j"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
