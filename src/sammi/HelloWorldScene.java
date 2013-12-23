@@ -14,28 +14,30 @@ public class HelloWorldScene extends AbstractScene {
 
 	public HelloWorldScene(MTApplication mtApplication, String name) {
 		super(mtApplication, name);
-		this.setClearColor(new MTColor(48, 48, 48, 255));
 		
 		// Draw background
-		for (int i = 0; i <= mtApplication.width; i += 16) {
-			for (int j = 0; j <= mtApplication.height; j += 16) {
-				MTEllipse bgCirkel = new MTEllipse(mtApplication, new Vector3D(i, j), 4, 4);
-				bgCirkel.setFillColor(new MTColor(0, 0, 0));
-				bgCirkel.setNoStroke(true);
-				bgCirkel.removeAllGestureEventListeners();
-				this.getCanvas().addChild(bgCirkel);
-			}
-		}
-		for (int i = 8; i <= mtApplication.width; i += 16) {
-			for (int j = 8; j <= mtApplication.height; j += 16) {
-				MTEllipse bgCirkel = new MTEllipse(mtApplication, new Vector3D(i, j), 4, 4);
-				bgCirkel.setFillColor(new MTColor(0, 0, 0));
-				bgCirkel.setNoStroke(true);
-				bgCirkel.removeAllGestureEventListeners();
-				this.getCanvas().addChild(bgCirkel);
-			}
+		BackgroundManager bgManager = new BackgroundManager(mtApplication, this, new MTColor(48, 48, 48, 255), new MTColor(0, 0, 0));
+		int[][] arrow = new int[6][2];
+		arrow[0][0] = 2;
+		arrow[0][1] = 2;
 		
-		}
+		arrow[1][0] = 1;
+		arrow[1][1] = 1;
+		
+		arrow[2][0] = 1;
+		arrow[2][1] = 2;
+		
+		arrow[3][0] = 0;
+		arrow[3][1] = 3;
+		
+		arrow[4][0] = 2;
+		arrow[4][1] = 3;
+		
+		arrow[5][0] = 1;
+		arrow[5][1] = 3;
+		
+		bgManager.addHUDElement(new HUDElement(arrow));
+		bgManager.drawBackGround();
 		
 		this.registerGlobalInputProcessor(new CursorTracer(mtApplication, this));
 	}
