@@ -1,6 +1,5 @@
 import org.mt4j.MTApplication;
 
-
 public class Main extends MTApplication {
 
 	/**
@@ -15,7 +14,7 @@ public class Main extends MTApplication {
 	@Override
 	public void startUp() {
 		// TODO Auto-generated method stub
-
+		addScene(new TestScene(this, "Test Scene"));
 	}
 
 }
