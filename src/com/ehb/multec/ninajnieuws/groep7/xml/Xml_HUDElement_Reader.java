@@ -3,17 +3,19 @@ package com.ehb.multec.ninajnieuws.groep7.xml;
 import java.io.File;
 import java.util.ArrayList;
 
+import org.mt4j.MTApplication;
 import org.mt4j.util.MTColor;
 import org.mt4j.util.xml.XmlHandler;
 import org.w3c.dom.*;
 
 import com.ehb.multec.ninajnieuws.groep7.background.HUDElement;
+import com.ehb.multec.ninajnieuws.groep7.background.UserControlPanelElement;
 
+// http://www.mkyong.com/java/how-to-read-xml-file-in-java-dom-parser/
 public class Xml_HUDElement_Reader {
 	private ArrayList<HUDElement> HUDElements = new ArrayList<HUDElement>();
 	
-	public Xml_HUDElement_Reader() {
-		// File leest data.xml vanaf de root folder (NIET src!!!)
+	public Xml_HUDElement_Reader(MTApplication mtApplication) {
 		File f = new File("data/xml/HUDcoordinates.xml");
 		
 		XmlHandler xmlHandler = XmlHandler.getInstance();
@@ -25,9 +27,21 @@ public class Xml_HUDElement_Reader {
 			
 			if (HUDElementNode.getNodeType() == Node.ELEMENT_NODE) {				
 				Element currentElement = (Element) HUDElementNode;
-				HUDElement tempHUDElement = new HUDElement(new MTColor(Integer.parseInt(currentElement.getAttribute("r")), 
-						Integer.parseInt(currentElement.getAttribute("g")), 
-						Integer.parseInt(currentElement.getAttribute("b"))), currentElement.getAttribute("name"));
+				
+				HUDElement tempHUDElement;
+				if (currentElement.getAttribute("type").equals("ucp")) {
+					tempHUDElement = new UserControlPanelElement(new MTColor(Integer.parseInt(currentElement.getAttribute("r")), 
+							Integer.parseInt(currentElement.getAttribute("g")), 
+							Integer.parseInt(currentElement.getAttribute("b"))), currentElement.getAttribute("name"), 
+							mtApplication,
+							Integer.parseInt(currentElement.getAttribute("centreV")), 
+							Integer.parseInt(currentElement.getAttribute("centreW")));
+				} else {
+					tempHUDElement = new HUDElement(new MTColor(Integer.parseInt(currentElement.getAttribute("r")), 
+							Integer.parseInt(currentElement.getAttribute("g")), 
+							Integer.parseInt(currentElement.getAttribute("b"))), currentElement.getAttribute("name"));
+				}
+				
 				
 				NodeList currentElementChildren = currentElement.getChildNodes();
 				

@@ -4,23 +4,23 @@ import java.util.ArrayList;
 import org.mt4j.util.MTColor;
 
 public class HUDElement {
-	private String name;
-	private ArrayList<int[]> coordinates = new ArrayList<int[]>();
-	private MTColor elementColor;
+	protected String name;
+	protected ArrayList<int[]> coordinates = new ArrayList<int[]>();
+	protected MTColor elementColor;
 	
 	public HUDElement(MTColor elementColor, String name) {
 		this.name = name;
 		this.elementColor = elementColor;
 	}
 	
-	public void translate(int x, int y) {
+	public void translate(int v, int w) {
 		for (int i = 0; i < coordinates.size(); i++) {
 			int[] tempHUDElement = coordinates.get(i);
-			tempHUDElement[0] += x;
-			if (y % 2 == 0) {
-				tempHUDElement[1] += y;
+			tempHUDElement[0] += v;
+			if (w % 2 == 0) {
+				tempHUDElement[1] += w;
 			} else {
-				tempHUDElement[1] += (y - 1);
+				tempHUDElement[1] += (w - 1);
 			}
 		}
 	}

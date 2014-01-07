@@ -15,7 +15,7 @@ public class HomeScene extends AbstractScene {
 		super(mtApplication, name);
 		int vScreenWidth = (int)(mtApplication.width / dx);
 		int wScreenHeight = (int)(mtApplication.height / dy);
-		Xml_HUDElement_Reader HUDElementsReader = new Xml_HUDElement_Reader();
+		Xml_HUDElement_Reader HUDElementsReader = new Xml_HUDElement_Reader(mtApplication);
 		
 		bgManager.setScene(this);
 		BackgroundManager.setDx(dx);
