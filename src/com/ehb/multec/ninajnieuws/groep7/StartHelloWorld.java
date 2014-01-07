@@ -1,4 +1,4 @@
-package sammi;
+package com.ehb.multec.ninajnieuws.groep7;
 
 import org.mt4j.MTApplication;
 

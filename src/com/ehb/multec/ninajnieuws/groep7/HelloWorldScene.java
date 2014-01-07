@@ -1,10 +1,13 @@
-package sammi;
+package com.ehb.multec.ninajnieuws.groep7;
 
 
 import org.mt4j.MTApplication;
 import org.mt4j.input.inputProcessors.globalProcessors.CursorTracer;
 import org.mt4j.sceneManagement.AbstractScene;
 import org.mt4j.util.MTColor;
+
+import sammi.BackgroundManager;
+import sammi.HUDElement;
 
 public class HelloWorldScene extends AbstractScene {
 	// Hoeveel pixels er tussen de bolletjes zitten
