@@ -1,4 +1,4 @@
-package com.ehb.multec.ninajnieuws.groep7;
+package sammi;
 
 import org.mt4j.MTApplication;
 
@@ -15,7 +15,7 @@ public class StartHelloWorld extends MTApplication {
 
 	@Override
 	public void startUp() {
-		addScene(new HelloWorldScene(this, "HalloooWereld"));
+		addScene(new HelloWorldScene(this, "Hello World"));
 	}
 
 }

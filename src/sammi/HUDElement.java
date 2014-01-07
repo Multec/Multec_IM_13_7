@@ -3,7 +3,7 @@ package sammi;
 import org.mt4j.util.MTColor;
 
 public class HUDElement {
-	
+	private String name;
 	private int[][] coordinates;
 	private MTColor elementColor;
 	

@@ -1,25 +1,21 @@
-package com.ehb.multec.ninajnieuws.groep7;
-
+package sammi;
 
 import org.mt4j.MTApplication;
 import org.mt4j.input.inputProcessors.globalProcessors.CursorTracer;
 import org.mt4j.sceneManagement.AbstractScene;
 import org.mt4j.util.MTColor;
 
-import sammi.BackgroundManager;
-import sammi.HUDElement;
-
-public class HelloWorldScene extends AbstractScene {
-	// Hoeveel pixels er tussen de bolletjes zitten
+public class HelloWorldScene extends AbstractScene {	
+	// Hoeveel pixels er tussen de bolletjes zitten in de achtergrond
 	private int dx = 16, dy = 8;
+	
+	private MTColor blue = new MTColor(33, 224, 224);
 	
 	private int[][] arrowUp = new int[3][2];
 	private int[][] arrowDown = new int[3][2];
 	int[][] ucp1 = new int[9][2];
 	int[][] ucp2 = new int[9][2];
 	int[][] ucp3 = new int[9][2];
-	
-	private MTColor blue = new MTColor(33, 224, 224);
 
 	public HelloWorldScene(MTApplication mtApplication, String name) {
 		super(mtApplication, name);
@@ -132,8 +128,11 @@ public class HelloWorldScene extends AbstractScene {
 		HUDElement UCPElement3 = new HUDElement(ucp3, blue);
 		
 		// Draw background
-		BackgroundManager bgManager = new BackgroundManager(mtApplication, this, new MTColor(48, 48, 48, 255), new MTColor(0, 0, 0), dx, dy);
-			
+		BackgroundManager bgManager = new BackgroundManager(mtApplication, new MTColor(48, 48, 48, 255), new MTColor(0, 0, 0));
+		bgManager.setScene(this);
+		BackgroundManager.setDx(dx);
+		BackgroundManager.setDy(dy);
+		
 		arrowUpElement.translate(vScreenWidth / 2 - 1, 16);
 		arrowDownElement.translate(vScreenWidth / 2 - 1, 0);
 		UCPElement1.translate(2, wScreenHeight - 4);

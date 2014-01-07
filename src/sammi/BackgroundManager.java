@@ -1,7 +1,6 @@
 package sammi;
 
 import java.util.ArrayList;
-
 import org.mt4j.MTApplication;
 import org.mt4j.components.visibleComponents.shapes.MTEllipse;
 import org.mt4j.sceneManagement.AbstractScene;
@@ -13,15 +12,12 @@ public class BackgroundManager {
 
 	private MTApplication mtApplication;
 	private AbstractScene scene;
-	private int dx, dy;
+	static private int dx, dy;
 	private MTColor bgColor, ellipseColor;
-	private ArrayList<HUDElement> HUDElements = new ArrayList<HUDElement>();
+	static private ArrayList<HUDElement> HUDElements = new ArrayList<HUDElement>();
 	
-	public BackgroundManager(MTApplication mtApplication, AbstractScene scene, MTColor bgColor, MTColor ellipseColor, int dx, int dy) {
+	public BackgroundManager(MTApplication mtApplication, MTColor bgColor, MTColor ellipseColor) {
 		this.mtApplication = mtApplication;
-		this.scene = scene;
-		this.dx = dx;
-		this.dy = dy;
 		this.bgColor = bgColor;
 		this.ellipseColor = ellipseColor;
 	}
@@ -30,16 +26,16 @@ public class BackgroundManager {
 		scene.setClearColor(bgColor);
 		MTEllipse bgCirkel;
 		
-		for (int i = 0; i <= mtApplication.width / dx; i++) {
-			for (int j = 0; j <= mtApplication.height / dy; j++) {
+		for (int i = 0; i <= mtApplication.width / getDx(); i++) {
+			for (int j = 0; j <= mtApplication.height / getDy(); j++) {
 				double jX = j;
-				int v = i * dx;
-				int w = j * dy;
+				int v = i * getDx();
+				int w = j * getDy();
 				
 				if ((jX % 2) == 0) {
 					bgCirkel = new MTEllipse(mtApplication, new Vector3D(v, w), 4, 4);
 				} else {
-					bgCirkel = new MTEllipse(mtApplication, new Vector3D(v + dy, w), 4, 4);
+					bgCirkel = new MTEllipse(mtApplication, new Vector3D(v + getDy(), w), 4, 4);
 				}
 				bgCirkel.setFillColor(ellipseColor);
 				
@@ -66,5 +62,25 @@ public class BackgroundManager {
 	
 	public void removeHUDElement(int index) {
 		HUDElements.remove(index);
+	}
+
+	public static int getDx() {
+		return dx;
+	}
+
+	public static void setDx(int dx) {
+		BackgroundManager.dx = dx;
+	}
+
+	public static int getDy() {
+		return dy;
+	}
+
+	public static void setDy(int dy) {
+		BackgroundManager.dy = dy;
+	}
+
+	public void setScene(AbstractScene scene) {
+		this.scene = scene;
 	}
 }

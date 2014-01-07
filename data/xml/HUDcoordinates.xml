@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<HUDElements>
+	<HUDElement r='33' g='244' b='244' name="arrowUp">
+		<coordinate x='0' y='1'/>
+		<coordinate x='1' y='0'/>
+		<coordinate x='1' y='1'/>
+	</HUDElement>
+	<HUDElement r='33' g='244' b='244' name="arrowDown">
+		<coordinate x='1' y='2'/>
+		<coordinate x='0' y='1'/>
+		<coordinate x='1' y='1'/>
+	</HUDElement>
+	<HUDElement r='33' g='244' b='244' name="ucp1">
+		<coordinate x='1' y='0'/>
+		<coordinate x='0' y='1'/>
+		<coordinate x='0' y='2'/>
+		<coordinate x='0' y='3'/>
+		<coordinate x='1' y='4'/>
+		<coordinate x='1' y='3'/>
+		<coordinate x='2' y='2'/>
+		<coordinate x='1' y='1'/>
+		<coordinate x='1' y='2'/>
+	</HUDElement>
+	<HUDElement r='33' g='244' b='244' name="ucp2">
+		<coordinate x='1' y='0'/>
+		<coordinate x='0' y='1'/>
+		<coordinate x='0' y='2'/>
+		<coordinate x='0' y='3'/>
+		<coordinate x='1' y='4'/>
+		<coordinate x='1' y='3'/>
+		<coordinate x='2' y='2'/>
+		<coordinate x='1' y='1'/>
+		<coordinate x='1' y='2'/>
+	</HUDElement>
+	<HUDElement r='33' g='244' b='244' name="ucp3">
+		<coordinate x='1' y='0'/>
+		<coordinate x='0' y='1'/>
+		<coordinate x='0' y='2'/>
+		<coordinate x='0' y='3'/>
+		<coordinate x='1' y='4'/>
+		<coordinate x='1' y='3'/>
+		<coordinate x='2' y='2'/>
+		<coordinate x='1' y='1'/>
+		<coordinate x='1' y='2'/>
+	</HUDElement>
+</HUDElements>
