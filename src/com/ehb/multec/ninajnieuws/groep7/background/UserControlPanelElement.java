@@ -2,7 +2,6 @@ package com.ehb.multec.ninajnieuws.groep7.background;
 
 import org.mt4j.MTApplication;
 import org.mt4j.components.visibleComponents.shapes.MTEllipse;
-import org.mt4j.input.inputProcessors.IGestureEventListener;
 import org.mt4j.input.inputProcessors.componentProcessors.tapProcessor.TapProcessor;
 import org.mt4j.util.MTColor;
 import org.mt4j.util.math.Vector3D;
@@ -26,8 +25,8 @@ public class UserControlPanelElement extends HUDElement {
 		int x = getCentreX();
 		int y = getCentreY();
 		touchArea = new MTEllipse(mtApplication, new Vector3D(x, y), 20, 20);
-		/*touchArea.setFillColor(new MTColor((float)0.0, (float)0.0, (float)0.0, (float)0.0));
-		touchArea.setStrokeColor(new MTColor((float)0.0, (float)0.0, (float)0.0, (float)0.0));*/
+		touchArea.setFillColor(new MTColor((float)0.0, (float)0.0, (float)0.0, (float)0.0));
+		touchArea.setStrokeColor(new MTColor((float)0.0, (float)0.0, (float)0.0, (float)0.0));
 		touchArea.unregisterAllInputProcessors();
 		touchArea.removeAllGestureEventListeners();
 		touchArea.registerInputProcessor(new TapProcessor(mtApplication));

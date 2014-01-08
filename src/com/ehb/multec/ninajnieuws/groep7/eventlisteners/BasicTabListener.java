@@ -2,6 +2,7 @@ package com.ehb.multec.ninajnieuws.groep7.eventlisteners;
 
 import org.mt4j.input.inputProcessors.IGestureEventListener;
 import org.mt4j.input.inputProcessors.MTGestureEvent;
+import org.mt4j.input.inputProcessors.componentProcessors.tapProcessor.TapEvent;
 
 public class BasicTabListener implements IGestureEventListener {
 
@@ -10,9 +11,12 @@ public class BasicTabListener implements IGestureEventListener {
 	}
 
 	@Override
-	public boolean processGestureEvent(MTGestureEvent arg0) {
-		System.out.println("Het WERKT!");
-		return true;
+	public boolean processGestureEvent(MTGestureEvent ge) {
+		TapEvent te = (TapEvent)ge;
+		if (!te.isTapDown()) {
+			System.out.println("Het werkt!");
+		}
+		return false;
 	}
 
 }
