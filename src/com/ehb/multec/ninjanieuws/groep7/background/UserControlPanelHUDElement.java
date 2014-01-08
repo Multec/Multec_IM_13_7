@@ -26,8 +26,8 @@ public class UserControlPanelHUDElement extends HUDElement {
 		int x = getCentreX();
 		int y = getCentreY();
 		touchArea = new MTEllipse(mtApplication, new Vector3D(x, y), 20, 20);
-		touchArea.setFillColor(new MTColor((float)0.0, (float)0.0, (float)0.0, (float)0.0));
-		touchArea.setStrokeColor(new MTColor((float)0.0, (float)0.0, (float)0.0, (float)0.0));
+		touchArea.setNoFill(true);
+		touchArea.setNoStroke(true);
 		touchArea.unregisterAllInputProcessors();
 		touchArea.removeAllGestureEventListeners();
 		touchArea.registerInputProcessor(new TapProcessor(mtApplication));
