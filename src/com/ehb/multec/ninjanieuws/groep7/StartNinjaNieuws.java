@@ -1,9 +1,9 @@
-package com.ehb.multec.ninajnieuws.groep7;
+package com.ehb.multec.ninjanieuws.groep7;
 
 import org.mt4j.MTApplication;
 import org.mt4j.util.MTColor;
 
-import com.ehb.multec.ninajnieuws.groep7.background.*;
+import com.ehb.multec.ninjanieuws.groep7.background.*;
 
 public class StartNinjaNieuws extends MTApplication {
 	private BackgroundManager bgManager = new BackgroundManager(this, new MTColor(48, 48, 48, 255), new MTColor(0, 0, 0));

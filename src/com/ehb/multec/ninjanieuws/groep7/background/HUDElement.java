@@ -1,4 +1,4 @@
-package com.ehb.multec.ninajnieuws.groep7.background;
+package com.ehb.multec.ninjanieuws.groep7.background;
 
 import java.util.ArrayList;
 import org.mt4j.util.MTColor;
@@ -7,6 +7,7 @@ public class HUDElement {
 	protected String name;
 	protected ArrayList<int[]> coordinates = new ArrayList<int[]>();
 	protected MTColor elementColor;
+	protected boolean active = false;
 	
 	public HUDElement(MTColor elementColor, String name) {
 		this.name = name;
@@ -43,5 +44,13 @@ public class HUDElement {
 	
 	public void addCoordinate(int[] coordinate) {
 		coordinates.add(coordinate);
-	}	
+	}
+
+	public boolean isActive() {
+		return active;
+	}
+
+	public void setActive(boolean active) {
+		this.active = active;
+	}
 }

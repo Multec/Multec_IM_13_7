@@ -1,4 +1,4 @@
-package com.ehb.multec.ninajnieuws.groep7.xml;
+package com.ehb.multec.ninjanieuws.groep7.xml;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -8,8 +8,8 @@ import org.mt4j.util.MTColor;
 import org.mt4j.util.xml.XmlHandler;
 import org.w3c.dom.*;
 
-import com.ehb.multec.ninajnieuws.groep7.background.HUDElement;
-import com.ehb.multec.ninajnieuws.groep7.background.UserControlPanelHUDElement;
+import com.ehb.multec.ninjanieuws.groep7.background.HUDElement;
+import com.ehb.multec.ninjanieuws.groep7.background.UserControlPanelHUDElement;
 
 // http://www.mkyong.com/java/how-to-read-xml-file-in-java-dom-parser/
 public class Xml_HUDElement_Reader {

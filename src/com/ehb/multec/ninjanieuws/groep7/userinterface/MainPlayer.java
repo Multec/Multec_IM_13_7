@@ -1,4 +1,4 @@
-package com.ehb.multec.ninjanieuws.groep7.player;
+package com.ehb.multec.ninjanieuws.groep7.userinterface;
 
 import org.mt4j.MTApplication;
 import org.mt4j.components.visibleComponents.shapes.MTRectangle;

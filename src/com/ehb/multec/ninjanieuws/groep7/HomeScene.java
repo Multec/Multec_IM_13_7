@@ -1,12 +1,12 @@
-package com.ehb.multec.ninajnieuws.groep7;
+package com.ehb.multec.ninjanieuws.groep7;
 
 import org.mt4j.MTApplication;
 import org.mt4j.input.inputProcessors.globalProcessors.CursorTracer;
 import org.mt4j.sceneManagement.AbstractScene;
 
-import com.ehb.multec.ninajnieuws.groep7.background.*;
-import com.ehb.multec.ninajnieuws.groep7.xml.*;
-import com.ehb.multec.ninjanieuws.groep7.player.MainPlayer;
+import com.ehb.multec.ninjanieuws.groep7.background.*;
+import com.ehb.multec.ninjanieuws.groep7.userinterface.MainPlayer;
+import com.ehb.multec.ninjanieuws.groep7.xml.*;
 
 public class HomeScene extends AbstractScene {
 	// Hoeveel pixels er tussen de bolletjes zitten in de achtergrond

@@ -1,12 +1,13 @@
-package com.ehb.multec.ninajnieuws.groep7.background;
+package com.ehb.multec.ninjanieuws.groep7.background;
 
 import org.mt4j.MTApplication;
 import org.mt4j.components.visibleComponents.shapes.MTEllipse;
+import org.mt4j.input.inputProcessors.IGestureEventListener;
+import org.mt4j.input.inputProcessors.MTGestureEvent;
+import org.mt4j.input.inputProcessors.componentProcessors.tapProcessor.TapEvent;
 import org.mt4j.input.inputProcessors.componentProcessors.tapProcessor.TapProcessor;
 import org.mt4j.util.MTColor;
 import org.mt4j.util.math.Vector3D;
-
-import com.ehb.multec.ninajnieuws.groep7.eventlisteners.BasicTabListener;
 
 public class UserControlPanelHUDElement extends HUDElement {
 
@@ -30,7 +31,16 @@ public class UserControlPanelHUDElement extends HUDElement {
 		touchArea.unregisterAllInputProcessors();
 		touchArea.removeAllGestureEventListeners();
 		touchArea.registerInputProcessor(new TapProcessor(mtApplication));
-		touchArea.addGestureListener(TapProcessor.class, new BasicTabListener());
+		touchArea.addGestureListener(TapProcessor.class, new IGestureEventListener() {
+			@Override
+			public boolean processGestureEvent(MTGestureEvent ge) {
+				TapEvent te = (TapEvent)ge;
+				if (!te.isTapDown()) {
+					
+				}
+				return false;
+			}
+		});
 		
 	}
 	

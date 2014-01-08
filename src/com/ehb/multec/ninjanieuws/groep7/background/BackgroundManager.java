@@ -1,4 +1,4 @@
-package com.ehb.multec.ninajnieuws.groep7.background;
+package com.ehb.multec.ninjanieuws.groep7.background;
 
 import java.util.ArrayList;
 import org.mt4j.MTApplication;
