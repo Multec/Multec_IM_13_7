@@ -9,7 +9,7 @@ import org.mt4j.util.xml.XmlHandler;
 import org.w3c.dom.*;
 
 import com.ehb.multec.ninajnieuws.groep7.background.HUDElement;
-import com.ehb.multec.ninajnieuws.groep7.background.UserControlPanelElement;
+import com.ehb.multec.ninajnieuws.groep7.background.UserControlPanelHUDElement;
 
 // http://www.mkyong.com/java/how-to-read-xml-file-in-java-dom-parser/
 public class Xml_HUDElement_Reader {
@@ -30,7 +30,7 @@ public class Xml_HUDElement_Reader {
 				
 				HUDElement tempHUDElement;
 				if (currentElement.getAttribute("type").equals("ucp")) {
-					tempHUDElement = new UserControlPanelElement(new MTColor(Integer.parseInt(currentElement.getAttribute("r")), 
+					tempHUDElement = new UserControlPanelHUDElement(new MTColor(Integer.parseInt(currentElement.getAttribute("r")), 
 							Integer.parseInt(currentElement.getAttribute("g")), 
 							Integer.parseInt(currentElement.getAttribute("b"))), currentElement.getAttribute("name"), 
 							mtApplication,

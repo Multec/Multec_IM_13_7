@@ -8,13 +8,13 @@ import org.mt4j.util.math.Vector3D;
 
 import com.ehb.multec.ninajnieuws.groep7.eventlisteners.BasicTabListener;
 
-public class UserControlPanelElement extends HUDElement {
+public class UserControlPanelHUDElement extends HUDElement {
 
 	private MTApplication mtApplication;
 	private int centreV, centreW;
 	private MTEllipse touchArea;
 
-	public UserControlPanelElement(MTColor elementColor, String name, MTApplication mtApplication, int centreV, int centreW) {
+	public UserControlPanelHUDElement(MTColor elementColor, String name, MTApplication mtApplication, int centreV, int centreW) {
 		super(elementColor, name);
 		this.mtApplication = mtApplication;
 		this.centreV = centreV;

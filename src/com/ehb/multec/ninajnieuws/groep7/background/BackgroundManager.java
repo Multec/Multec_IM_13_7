@@ -57,7 +57,7 @@ public class BackgroundManager {
 		}
 		for (HUDElement element : HUDElements) {
 			if(element.getClass().getSimpleName().equals("UserControlPanelElement")) {
-				UserControlPanelElement ucpElement = (UserControlPanelElement)element;
+				UserControlPanelHUDElement ucpElement = (UserControlPanelHUDElement)element;
 				scene.getCanvas().addChild(ucpElement.getTouchArea());
 			}
 			
