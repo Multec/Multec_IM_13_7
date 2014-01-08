@@ -6,6 +6,7 @@ import org.mt4j.sceneManagement.AbstractScene;
 
 import com.ehb.multec.ninajnieuws.groep7.background.*;
 import com.ehb.multec.ninajnieuws.groep7.xml.*;
+import com.ehb.multec.ninjanieuws.groep7.player.MainPlayer;
 
 public class HomeScene extends AbstractScene {
 	// Hoeveel pixels er tussen de bolletjes zitten in de achtergrond
@@ -30,6 +31,11 @@ public class HomeScene extends AbstractScene {
 		bgManager.selectHUDElement("ucp3").translate(vScreenWidth - 4, wScreenHeight - 4);
 		
 		bgManager.drawBackGround();
+		
+		// MAIN PLAYER
+		MainPlayer playlist = new MainPlayer(mtApplication, this);
+		playlist.drawBackground();
+		
 		
 		this.registerGlobalInputProcessor(new CursorTracer(mtApplication, this));
 	}
