@@ -55,13 +55,13 @@ public class BackgroundManager {
 				scene.getCanvas().addChild(bgCirkel);
 			}
 		}
-		for (HUDElement element : HUDElements) {
+		/*for (HUDElement element : HUDElements) {
 			if(element.getClass().getSimpleName().equals("UserControlPanelElement")) {
 				UserControlPanelHUDElement ucpElement = (UserControlPanelHUDElement)element;
-				scene.getCanvas().addChild(ucpElement.getTouchArea());
+				//scene.getCanvas().addChild(ucpElement.getTouchArea());
 			}
 			
-		}
+		}*/
 	}
 	
 	public HUDElement selectHUDElement(String name) {
