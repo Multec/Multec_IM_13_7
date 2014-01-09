@@ -1,20 +1,21 @@
 package com.ehb.multec.ninjanieuws.groep7.eventlisteners;
 
-import org.mt4j.components.MTComponent;
 import org.mt4j.input.inputProcessors.IGestureEventListener;
 import org.mt4j.input.inputProcessors.MTGestureEvent;
 import org.mt4j.input.inputProcessors.componentProcessors.dragProcessor.DragEvent;
 import org.mt4j.util.math.Vector3D;
 
+import com.ehb.multec.ninjanieuws.groep7.userinterface.UserControlPanel;
+
 import processing.core.PApplet;
 
 public class UCPDragEventListener implements IGestureEventListener {
 
-	MTComponent ucp;
+	UserControlPanel ucp;
 	Vector3D center;
 	PApplet pApplet;
 	
-	public UCPDragEventListener(MTComponent ucp, int centreX, int centreY, PApplet pApplet) {
+	public UCPDragEventListener(UserControlPanel ucp, int centreX, int centreY, PApplet pApplet) {
 		this.ucp = ucp;
 		this.center = new Vector3D(centreX, centreY);
 		this.pApplet = pApplet;
@@ -22,8 +23,9 @@ public class UCPDragEventListener implements IGestureEventListener {
 
 	@Override
 	public boolean processGestureEvent(MTGestureEvent ge) {
+		
 		DragEvent de = (DragEvent) ge;
-		ucp.rotateZ(center, angleBetweenWithAbsoluteZero(de.getFrom(), de.getTo(), center) * turnDirectionAroundCenter(de.getFrom(), de.getTo(), center));		
+		ucp.rotateZ(center, angleBetweenWithAbsoluteZero(de.getFrom(), de.getTo(), center) * turnDirectionAroundCenter(de.getFrom(), de.getTo(), center));
 		return false;
 	}
 	

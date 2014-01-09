@@ -6,7 +6,6 @@ import org.mt4j.sceneManagement.AbstractScene;
 
 import com.ehb.multec.ninjanieuws.groep7.background.*;
 import com.ehb.multec.ninjanieuws.groep7.userinterface.MainPlayer;
-import com.ehb.multec.ninjanieuws.groep7.userinterface.UserControlPanel;
 import com.ehb.multec.ninjanieuws.groep7.xml.*;
 
 public class HomeScene extends AbstractScene {
@@ -34,23 +33,19 @@ public class HomeScene extends AbstractScene {
 		
 		bgManager.drawBackGround();
 		
+		UserControlPanelHUDElement ucp1 = (UserControlPanelHUDElement) bgManager.selectHUDElement("ucp1");
+		this.getCanvas().addChild(ucp1.getUCP());
+		this.getCanvas().addChild(ucp1.getUCP().getTouchArea());
+		UserControlPanelHUDElement ucp2 = (UserControlPanelHUDElement) bgManager.selectHUDElement("ucp2");
+		this.getCanvas().addChild(ucp2.getUCP());
+		this.getCanvas().addChild(ucp2.getUCP().getTouchArea());
+		UserControlPanelHUDElement ucp3 = (UserControlPanelHUDElement) bgManager.selectHUDElement("ucp3");
+		this.getCanvas().addChild(ucp3.getUCP());
+		this.getCanvas().addChild(ucp3.getUCP().getTouchArea());
+		
 		// MAIN PLAYER
 		MainPlayer playlist = new MainPlayer(mtApplication, this);
 		playlist.drawBackground();
-		
-		// UCP's
-		UserControlPanel UCP1 = new UserControlPanel(mtApplication, 
-				(UserControlPanelHUDElement)bgManager.selectHUDElement("ucp1"),
-				-50, 50 + 44);
-		UserControlPanel UCP2 = new UserControlPanel(mtApplication, 
-				(UserControlPanelHUDElement)bgManager.selectHUDElement("ucp2"),
-				0, 150);
-		UserControlPanel UCP3 = new UserControlPanel(mtApplication, 
-				(UserControlPanelHUDElement)bgManager.selectHUDElement("ucp3"),
-				50, 50 + 44);
-		this.getCanvas().addChild(UCP1);
-		this.getCanvas().addChild(UCP2);
-		this.getCanvas().addChild(UCP3);
 		
 		this.registerGlobalInputProcessor(new CursorTracer(mtApplication, this));
 	}
