@@ -5,16 +5,19 @@ import org.mt4j.input.inputProcessors.globalProcessors.CursorTracer;
 import org.mt4j.sceneManagement.AbstractScene;
 
 import com.ehb.multec.ninjanieuws.groep7.background.*;
+import com.ehb.multec.ninjanieuws.groep7.featured.*;
 import com.ehb.multec.ninjanieuws.groep7.userinterface.MainPlayer;
 import com.ehb.multec.ninjanieuws.groep7.xml.*;
 
 public class HomeScene extends AbstractScene {
 	// Hoeveel pixels er tussen de bolletjes zitten in de achtergrond
 	private int dx = 16, dy = 8;
+	//Featured
+	private Featured featured;
+	private Featured featured2;
 
 	public HomeScene(MTApplication mtApplication, String name, BackgroundManager bgManager) {
 		super(mtApplication, name);
-		mtApplication.noStroke();
 		int vScreenWidth = (int)(mtApplication.width / dx);
 		int wScreenHeight = (int)(mtApplication.height / dy);
 		Xml_HUDElement_Reader HUDElementsReader = new Xml_HUDElement_Reader(mtApplication);
@@ -33,19 +36,18 @@ public class HomeScene extends AbstractScene {
 		
 		bgManager.drawBackGround();
 		
-		UserControlPanelHUDElement ucp1 = (UserControlPanelHUDElement) bgManager.selectHUDElement("ucp1");
-		this.getCanvas().addChild(ucp1.getUCP());
-		this.getCanvas().addChild(ucp1.getUCP().getTouchArea());
-		UserControlPanelHUDElement ucp2 = (UserControlPanelHUDElement) bgManager.selectHUDElement("ucp2");
-		this.getCanvas().addChild(ucp2.getUCP());
-		this.getCanvas().addChild(ucp2.getUCP().getTouchArea());
-		UserControlPanelHUDElement ucp3 = (UserControlPanelHUDElement) bgManager.selectHUDElement("ucp3");
-		this.getCanvas().addChild(ucp3.getUCP());
-		this.getCanvas().addChild(ucp3.getUCP().getTouchArea());
-		
 		// MAIN PLAYER
 		MainPlayer playlist = new MainPlayer(mtApplication, this);
 		playlist.drawBackground();
+		
+		//Featured
+		featured = new Featured(mtApplication, 300, 200);
+		featured.setScene(this);
+		featured.drawFSection();
+		
+		featured2 = new Featured(mtApplication, 890, 200);
+		featured2.setScene(this);
+		featured2.drawFSection();
 		
 		this.registerGlobalInputProcessor(new CursorTracer(mtApplication, this));
 	}
