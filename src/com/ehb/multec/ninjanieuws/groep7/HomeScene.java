@@ -6,6 +6,7 @@ import org.mt4j.sceneManagement.AbstractScene;
 
 import com.ehb.multec.ninjanieuws.groep7.background.*;
 import com.ehb.multec.ninjanieuws.groep7.featured.Featured;
+import com.ehb.multec.ninjanieuws.groep7.organic.Organic;
 import com.ehb.multec.ninjanieuws.groep7.userinterface.MainPlayer;
 import com.ehb.multec.ninjanieuws.groep7.xml.*;
 
@@ -20,6 +21,7 @@ public class HomeScene extends AbstractScene {
 		int wScreenHeight = (int)(mtApplication.height / dy);
 		Xml_HUDElement_Reader HUDElementsReader = new Xml_HUDElement_Reader(mtApplication);
 		
+		// BACKGROUND
 		bgManager.setScene(this);
 		BackgroundManager.setDx(dx);
 		BackgroundManager.setDy(dy);
@@ -34,6 +36,20 @@ public class HomeScene extends AbstractScene {
 		
 		bgManager.drawBackGround();
 		
+		// MAIN PLAYER
+		MainPlayer playlist = new MainPlayer(mtApplication, this);
+		playlist.drawBackground();
+		
+		// FEATURED
+		Featured featured = new Featured(mtApplication, 250, 250);
+		featured.setScene(this);
+		this.getCanvas().addChild(featured);
+				
+		// ORGANIC
+		Organic organic = new Organic(mtApplication, this);
+		this.getCanvas().addChild(organic);
+		
+		// USER CONTROL PANEL
 		UserControlPanelHUDElement ucp1 = (UserControlPanelHUDElement) bgManager.selectHUDElement("ucp1");
 		this.getCanvas().addChild(ucp1.getUCP());
 		this.getCanvas().addChild(ucp1.getUCP().getTouchArea());
@@ -44,14 +60,7 @@ public class HomeScene extends AbstractScene {
 		this.getCanvas().addChild(ucp3.getUCP());
 		this.getCanvas().addChild(ucp3.getUCP().getTouchArea());
 		
-		// MAIN PLAYER
-		MainPlayer playlist = new MainPlayer(mtApplication, this);
-		playlist.drawBackground();
-		
-		//Featured
-		Featured featured = new Featured(mtApplication, 250, 250);
-		featured.setScene(this);
-		this.getCanvas().addChild(featured);
+
 		
 		this.registerGlobalInputProcessor(new CursorTracer(mtApplication, this));
 	}
