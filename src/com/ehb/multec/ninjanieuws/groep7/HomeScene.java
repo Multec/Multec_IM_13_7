@@ -12,9 +12,6 @@ import com.ehb.multec.ninjanieuws.groep7.xml.*;
 public class HomeScene extends AbstractScene {
 	// Hoeveel pixels er tussen de bolletjes zitten in de achtergrond
 	private int dx = 16, dy = 8;
-	//Featured
-	private Featured featured;
-	private Featured featured2;
 
 	public HomeScene(MTApplication mtApplication, String name, BackgroundManager bgManager) {
 		super(mtApplication, name);
@@ -41,13 +38,9 @@ public class HomeScene extends AbstractScene {
 		playlist.drawBackground();
 		
 		//Featured
-		featured = new Featured(mtApplication, 300, 200);
+		Featured featured = new Featured(mtApplication, 250, 250);
 		featured.setScene(this);
-		featured.drawFSection();
-		
-		featured2 = new Featured(mtApplication, 890, 200);
-		featured2.setScene(this);
-		featured2.drawFSection();
+		this.getCanvas().addChild(featured);
 		
 		this.registerGlobalInputProcessor(new CursorTracer(mtApplication, this));
 	}
