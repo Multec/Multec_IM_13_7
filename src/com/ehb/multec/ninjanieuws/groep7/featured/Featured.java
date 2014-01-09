@@ -1,4 +1,4 @@
-package com.ehb.multec.nenjanieuws.groep7.featured;
+package com.ehb.multec.ninjanieuws.groep7.featured;
 
 import java.util.ArrayList;
 
